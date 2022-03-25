@@ -82,3 +82,10 @@ module.exports = {
 ```
 <small>20220224122934-add-city-to-Users.js</small>
 
+The city column will be added to the Users table so the structure now looks like this.
+
+| id | email | password | name | createdAt | updatedAt | city |
+| ------ | - | - | - | - | - | - |
+| &nbsp; |   |   |   |   |   |   |
+| &nbsp; |   |   |   |   |   |   |
+
