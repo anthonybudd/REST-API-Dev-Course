@@ -25,7 +25,7 @@ The `up` method will be executed when you are stepping
 
 The `down` method will be called in reverse.
 
-20211224124959-create-Users.js
+
 ```js
 module.exports = {
     up: (queryInterface, Sequelize) => queryInterface.createTable('Users', {
@@ -57,6 +57,7 @@ module.exports = {
     down: (queryInterface, Sequelize) => queryInterface.dropTable('Users'),
 };
 ```
+<small>src/database/migrations/20211224124959-create-Users.js</small>
 
 Execuite the migrations using the command `npm run db:migrate`. This will create a table that looks like this.
 
@@ -64,4 +65,20 @@ Execuite the migrations using the command `npm run db:migrate`. This will create
 | ------ | - | - | - | - | - |
 | &nbsp; |   |   |   |   |   |
 | &nbsp; |   |   |   |   |   |
+
+### Making Structural Changes
+As you add features to your API you will need to make changes to the database structure like adding and removing columns.
+
+Below is the migration code to make a change to an existing DB table.
+
+```js
+module.exports = {
+    up: (queryInterface, Sequelize) => queryInterface.addColumn('Users', 'city', {
+        type: Sequelize.STRING,
+        allowNull: true,
+    }),
+    down: (queryInterface, Sequelize) => queryInterface.removeColumn('Users', 'city'),
+};
+```
+<small>20220224122934-add-city-to-Users.js</small>
 
