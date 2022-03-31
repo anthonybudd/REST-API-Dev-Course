@@ -1,11 +1,11 @@
 # Migrations
-Over the life-cycle of your app you will need to make changes to the database. To keep these changes uniform acrros the dev team and our hosting enviroments we save the history of the database design as code in our repo. These instructions to re-create the database are called migrations.
+Over the life-cycle of your app you will need to make changes to your app's database structure. To keep these changes uniform across the dev team and hosting environments, we save the history of the database design as code in our repo. These *instructions* to re-create the database are called migrations.
 
 [Sequelize provides support for migrations](https://sequelize.org/master/manual/migrations.html).
 
 
 ### Naming Convention
-It is very important to name your migrations correctly. All files in your `src/database/migrations/` folder must follow this naming convention.
+It is very important to name your migrations correctly. All files in your `src/database/migrations/` directory must follow this naming convention.
 
 ```
 YYYYMMDDHHMMSS-ACTION-TABLE.js
@@ -16,7 +16,7 @@ Exmaples:
 20220126090304-remove-timezone-from-Users.js
 ```
 
-By putting the date in that format the files will automatically sorted in chronalogical order. The name of the file after the Timestamp is less imprtant but descriptive naming will make long-term developmentr easier.
+By putting the date in the above format, the files will automatically sorted in chronological order. The name of the file after the timestamp is less important but descriptive naming will make long-term development much easier.
 
 ### Creating a Migration
 Make a blank file in `src/database/migrations/` and name it appropriatly.
@@ -59,7 +59,7 @@ module.exports = {
 ```
 <small>src/database/migrations/20211224124959-create-Users.js</small>
 
-Execuite the migrations using the command `npm run db:migrate`. This will create a table that looks like this.
+Execute the migrations using the command `npm run db:migrate`. This will create a table that looks like this.
 
 | id | email | password | name | createdAt | updatedAt |
 | ------ | - | - | - | - | - |
@@ -82,7 +82,7 @@ module.exports = {
 ```
 <small>20220224122934-add-city-to-Users.js</small>
 
-The city column will be added to the Users table so the structure now looks like this.
+The city column will be added to the Users table so it now looks like this.
 
 | id | email | password | name | createdAt | updatedAt | city |
 | ------ | - | - | - | - | - | - |
